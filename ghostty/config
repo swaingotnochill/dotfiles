@@ -1,0 +1,30 @@
+# Font Related Configurations ------>
+font-family = "JetBrains Mono"
+font-size = 23
+
+# Windows Splitting ------->
+keybind = ctrl+d=new_split:right
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+
+# Tabs Conifgurations ------->
+keybind = ctrl+shift+t=new_tab
+
+
+# Clipboard Configurations ------>
+clipboard-trim-trailing-spaces = true
+copy-on-select = true
+
+
+# Quick Terminal Configurations ------>
+keybind = ctrl+t=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0
+quick-terminal-autohide = false
+
+# Auto Updates Configurations ------->
+auto-update = check
+
+
