@@ -1,0 +1,128 @@
+# Place a copy of this config to ~/.aerospace.toml
+# After that, you can edit ~/.aerospace.toml to your liking
+
+# Commands that run after login to macOS user session
+after-login-command = []
+
+# Commands that run after AeroSpace startup
+after-startup-command = []
+
+# Start AeroSpace at login
+start-at-login = true
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Layout Settings
+accordion-padding = 50
+
+# Default to tiles layout (instead of accordion)
+default-root-container-layout = 'tiles'
+
+# Set default orientation to vertical for more usable initial splits
+default-root-container-orientation = 'vertical'
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Don't automatically unhide hidden apps
+automatically-unhide-macos-hidden-apps = false
+
+# Key mapping preset (qwerty keyboard layout)
+[key-mapping]
+    preset = 'qwerty'
+
+# Remove all gaps between windows
+[gaps]
+    inner.horizontal = 0
+    inner.vertical = 0
+    outer.left = 0
+    outer.bottom = 0
+    outer.top = 0
+    outer.right = 0
+
+# Main keybindings
+[mode.main.binding]
+    # WINDOW SPLITS
+    # Split screen vertically (side by side)
+    alt-v = 'layout tiles vertical'
+    # Split screen horizontally (top and bottom)
+    alt-shift-h = 'layout tiles horizontal'
+    
+    # WINDOW NAVIGATION (vim-style)
+    alt-h = 'focus left'
+    alt-l = 'focus right'
+    alt-k = 'focus up'
+    alt-j = 'focus down'
+    
+    # QUICK WINDOW POSITIONING
+    # Move window to left/right half (using resize commands properly)
+    alt-left = 'resize width 50'
+    alt-right = 'resize width 50'
+    
+    # Fullscreen toggle (using correct layout command)
+    alt-f = 'layout tiling'
+    
+    # Center window (using proper resize command)
+    alt-c = 'resize width 80'
+    
+    # WINDOW MOVEMENT
+    alt-shift-left = 'move left'
+    alt-shift-right = 'move right'
+    alt-shift-up = 'move up'
+    alt-shift-down = 'move down'
+    
+    # WINDOW RESIZING
+    alt-minus = 'resize smart -100'
+    alt-equal = 'resize smart +100'
+    
+    # WORKSPACE MANAGEMENT
+    # Switch to workspace
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    
+    # Move window to workspace
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    
+    # Quick workspace switching
+    alt-tab = 'workspace-back-and-forth'
+    
+    # Move workspace to different monitor
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+    
+    # Enter service mode for additional commands
+    alt-shift-semicolon = 'mode service'
+    
+    # Enter resize mode
+    alt-r = 'mode resize'
+
+# Service mode bindings (advanced features)
+[mode.service.binding]
+    # Exit service mode
+    esc = ['mode main']
+    
+    # Reload config
+    r = ['reload-config', 'mode main']
+    
+    # Toggle floating mode
+    f = ['layout floating tiling', 'mode main']
+    
+    # Close all windows except current
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+# Resize mode bindings
+[mode.resize.binding]
+    # Resize in resize mode
+    minus = 'resize smart -50'
+    equal = 'resize smart +50'
+    
+    # Exit resize mode
+    esc = 'mode main'
